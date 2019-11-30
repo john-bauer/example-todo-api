@@ -3,7 +3,6 @@ const Todo = require('../models/todo')
 const todosController = {}
 
 todosController.index = (req, res) => {
-  // Find All
   Todo.findAll()
     .then(todos => {
       res.json({
@@ -31,6 +30,18 @@ todosController.create = (req, res) => {
     })
     .catch(err => {
       res.status(400).json({ message: '400', err })
+    })
+}
+
+todosController.destroy = (req, res) => {
+  Todo.destroy(req.params.id)
+    .then(() => {
+      res.json({
+        message: 'todo deleted'
+      })
+    })
+    .catch(err => {
+      res.status(400).json(err)
     })
 }
 
