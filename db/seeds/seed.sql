@@ -1,1 +1,1 @@
-\i todos.sql;
+\i db/seeds/todos.sql;
