@@ -6,6 +6,9 @@ const methodOverride = require('method-override')
 const cors = require('cors')
 const app = express()
 
+// import routes
+const todoRoutes = require('./routes/todoRoutes')
+
 // setup port
 const PORT = process.env.PORT || 3000
 app.listen(PORT, function () {
@@ -22,10 +25,13 @@ app.use(methodOverride('_method'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-// routes
+// serve static page at root
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, '/public/index.html'))
 })
+
+// set up the rest of the routes
+app.use('/api/todos', todoRoutes)
 
 // catch 404
 app.get('*', function (req, res) {
