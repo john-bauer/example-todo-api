@@ -2,9 +2,13 @@ const db = require('../db/config')
 
 const Todo = {}
 
-// find all quotes
+// find all todos
 Todo.findAll = () => {
   return db.query('SELECT todos.id, todos.title, todos.content, todos.is_completed FROM todos ORDER BY todos.id ASC')
+}
+
+Todo.findById = id => {
+  return db.oneOrNone('SELECT todos.title, todos.content, todos.id, todos.is_completed FROM todos WHERE todos.id = $1', [id])
 }
 
 // create a todo

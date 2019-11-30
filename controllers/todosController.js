@@ -33,6 +33,23 @@ todosController.create = (req, res) => {
     })
 }
 
+// get by id
+todosController.show = (req, res) => {
+  Todo.findById(req.params.id)
+    .then(todo => {
+      res.json({
+        message: 'ok',
+        todo: todo
+      })
+    })
+    .catch(err => {
+      res.status(400).json({
+        message: '400',
+        err
+      })
+    })
+}
+
 todosController.destroy = (req, res) => {
   Todo.destroy(req.params.id)
     .then(() => {
