@@ -20,3 +20,14 @@
 7. Run `\i db/migrations/migration.sql` to create and structure your tables.
 
 8. Run `\i db/seeds/seed.sql` to populate your database with some sample data.
+
+## Heroku Deployment Instructions
+1. Create a new Heroku app (recommended: connect the app to your own GitHub repository)
+
+2. Ensure you have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed, and you're signed in.
+
+3. Connect Heroku Postgres as an add-on (Free plan is fine).
+
+4. From your project directory, run `cat db/migrations/migration.sql | heroku pg:psql --app=YOUR_APP_NAME` to set up your database.
+
+5. Run `cat db/seeds/seed.sql | heroku pg:psql --app=YOUR_APP_NAME` to populate it with sample data.
