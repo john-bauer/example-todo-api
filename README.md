@@ -13,9 +13,9 @@
 
 4. From project directory, run `psql`
 
-5. Run `CREATE DATABASE example_api_service` to set up the database locally.
+5. Run `CREATE DATABASE example_todo_api` to set up the database locally.
 
-6. Connect to the instance with `\c example_api_service`.
+6. Connect to the instance with `\c example_todo_api`.
 
 7. Run `\i db/migrations/migration.sql` to create and structure your tables.
 

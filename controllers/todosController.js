@@ -16,6 +16,23 @@ todosController.index = (req, res) => {
     })
 }
 
+// get by id
+todosController.show = (req, res) => {
+  Todo.findById(req.params.id)
+    .then(todo => {
+      res.json({
+        message: 'ok',
+        todo: todo
+      })
+    })
+    .catch(err => {
+      res.status(400).json({
+        message: '400',
+        err
+      })
+    })
+}
+
 todosController.create = (req, res) => {
   Todo.create({
     title: req.body.title,
@@ -33,20 +50,31 @@ todosController.create = (req, res) => {
     })
 }
 
-// get by id
-todosController.show = (req, res) => {
+todosController.edit = (req, res) => {
   Todo.findById(req.params.id)
     .then(todo => {
       res.json({
         message: 'ok',
-        todo: todo
+        todo: todo,
+        id: req.params.id
       })
     })
     .catch(err => {
-      res.status(400).json({
-        message: '400',
-        err
-      })
+      res.status(400).json({ message: '400', err })
+    })
+}
+
+todosController.update = (req, res) => {
+  Todo.update({
+    title: req.body.title,
+    content: req.body.content,
+    is_completed: req.body.is_completed
+  }, req.params.id)
+    .then(todo => {
+      res.json({ message: 'ok', todo: todo })
+    })
+    .catch(err => {
+      res.status(400).json(err)
     })
 }
 
