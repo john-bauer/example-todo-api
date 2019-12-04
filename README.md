@@ -10,9 +10,9 @@ Building an API from scratch can be tedious and time-consuming. Having a strong 
 You can view all to-do's, get an individual to-do, create a new to-do, and edit or delete an existing one. Check the `/resources` directory and you'll find two Postman collections (one for dev, and one for the example production environment).
 
 ## Live Demo
-Try API here: https://example-todo-api.herokuapp.com/
+Before you get set up, you can try it out in production here: https://example-todo-api.herokuapp.com/
 
-## Getting Started
+## Getting Started (Local)
 1. Clone the repository
 
 2. Install project dependencies with  `npm install`
@@ -23,7 +23,7 @@ Try API here: https://example-todo-api.herokuapp.com/
 
  ⋅⋅⋅Windows/Linux: Follow instructions from the [official Postgres website](https://www.postgresql.org/download/)
 
-4. From project directory, run `psql`
+4. From the project directory, run `psql`
 
 5. Run `CREATE DATABASE example_todo_api` to set up the database locally.
 
@@ -33,10 +33,10 @@ Try API here: https://example-todo-api.herokuapp.com/
 
 8. Run `\i db/seeds/seed.sql` to populate your database with some sample data.
 
-## Heroku Deployment Instructions
+## Heroku Deployment Guide
 1. Create a new Heroku app (recommended: connect the app to your own GitHub repository)
 
-2. Ensure you have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed, and you're signed in.
+2. Ensure that you have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed, and that you're signed in.
 
 3. Connect Heroku Postgres as an add-on (Free plan is fine).
 
