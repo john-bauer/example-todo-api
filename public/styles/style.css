@@ -1,0 +1,63 @@
+html, body {
+    font-family: Helvetica, sans-serif
+}
+
+.container {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+.header {
+    padding-top: 24px;
+}
+
+.endpoint {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.request {
+    padding: 10px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: white;
+}
+
+.is-get {
+    background-color: #00E676;
+}
+
+.is-post {
+    background-color: #00B0FF;
+}
+
+.is-put {
+    background-color: #FFC400;
+}
+.is-delete {
+    background-color: #FF3D00;
+}
+
+.section-title {
+    margin-top: 24px;
+    font-weight: bold
+}
+
+.section-content {
+    margin-top: 12px;
+}
+
+pre {
+    background-color: #F5F5F5;
+    font-family: monospace;
+    line-height: 1.5;
+    padding: 8px;
+}

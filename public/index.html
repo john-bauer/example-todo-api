@@ -6,8 +6,187 @@
   <meta http-equiv='X-UA-Compatible' content='ie=edge' />
   <title>Todo Api Example</title>
   <link rel='stylesheet' type='text/css' href='static/styles/reset.css'>
+  <link rel='stylesheet' type='text/css' href='static/styles/style.css'>
 </head>
 <body>
-    <h1>Todo Api Example</h1>
+<div class="container">
+  <div class="header">
+    <h1>To-Do API Starter</h1>
+    <br/>
+    <p>A simple, production-ready Node.js API, built with Express.js and Postgres.</p>
+    <hr/>
+  </div>
+</div>
+<div class="container">
+  <div class="endpoint">
+    <span class="request is-get">/GET</span>
+    <span>/api/todos</span>
+    <p class="section-title">Description</p>
+    <p class="section-content">Retrieves all To-Do's as an array.</p>
+    <p class="section-title">Content Type</p>
+    <p class="section-content">application/json</p>
+    <p class="section-title">Request Body</p>
+    <p class="section-content">none</p>
+    <p class="section-title">Sample Response</p>
+    <pre class="section-content">
+{
+  "message": "ok",
+  "todosData": [
+    {
+      "id": "1",
+      "title": "Do something",
+      "content": "A description about this task.",
+      "is_completed": false
+    },
+    {
+      "id": "2",
+      "title": "Another task",
+      "content": "Lorem ipsum dolor sit amet."
+      "is_completed": true
+    },
+    {
+      "id": "3",
+      "title": "A third task",
+      "content": "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "is_completed": "false"
+    },
+  ]
+}
+</pre>
+  </div>
+</div>
+<div class="container">
+  <div class="endpoint">
+    <span class="request is-get">/GET</span>
+    <span>/api/todos/{id}</span>
+    <p class="section-title">Description</p>
+    <p class="section-content">Retrieves a single todo by ID</p>
+    <p class="section-title">Content Type</p>
+    <p class="section-content">application/json</p>
+    <p class="section-title">Request Body</p>
+    <p class="section-content">none</p>
+    <p class="section-title">Sample Response</p>
+    <pre class="section-content">{
+"message": "ok",
+"todo":
+  {
+    "id": "1",
+    "title": "Do something",
+    "content": "A description about this task.",
+    "is_completed": false
+  }
+}
+</pre>
+  </div>
+</div>
+<div class="container">
+  <div class="endpoint">
+    <span class="request is-post">/POST</span>
+    <span>/api/todos</span>
+    <p class="section-title">Description</p>
+    <p class="section-content">Add a new todo to the data.</p>
+    <p class="section-title">Content Type</p>
+    <p class="section-content">application/json</p>
+    <p class="section-title">Request Body</p>
+    <pre class="section-content">
+{
+  "title": "A new task",
+  "content": "Lorem ipsum dolor sit amet.",
+  "is_completed": false
+}
+      </pre>
+    <p class="section-title">Sample Response</p>
+    <pre class="section-content">{
+"message": "ok",
+"todo":
+  {
+    "id": "1",
+    "title": "Do something",
+    "content": "A description about this task.",
+    "is_completed": false
+  }
+}
+</pre>
+  </div>
+</div>
+<div class="container">
+  <div class="endpoint">
+    <span class="request is-put">/PUT</span>
+    <span>/api/todos/{id}</span>
+    <p class="section-title">Description</p>
+    <p class="section-content">Modify an existing todo by ID.</p>
+    <p class="section-title">Content Type</p>
+    <p class="section-content">application/json</p>
+    <p class="section-title">Request Body</p>
+    <pre class="section-content">
+{
+  "title": "Your new title",
+  "content": "Your new description",
+  "is_completed": true
+}
+      </pre>
+    <p class="section-title">Sample Response</p>
+    <pre class="section-content">
+{
+  "message": "ok",
+  "todo":
+    {
+      "id": "1",
+      "title": "Your new title",
+      "content": "Your new description",
+      "is_completed": true
+    }
+  }
+</pre>
+  </div>
+</div>
+<div class="container">
+  <div class="endpoint">
+    <span class="request is-put">/PUT</span>
+    <span>/api/todos/{id}</span>
+    <p class="section-title">Description</p>
+    <p class="section-content">Modify an existing todo by ID.</p>
+    <p class="section-title">Content Type</p>
+    <p class="section-content">application/json</p>
+    <p class="section-title">Request Body</p>
+    <pre class="section-content">
+{
+  "title": "Your new title",
+  "content": "Your new description",
+  "is_completed": true
+}
+      </pre>
+    <p class="section-title">Sample Response</p>
+    <pre class="section-content">
+{
+  "message": "ok",
+  "todo":
+  {
+    "id": "1",
+    "title": "Do something",
+    "content": "A description about this task.",
+    "is_completed": false
+  }
+}
+</pre>
+  </div>
+</div>
+<div class="container">
+  <div class="endpoint">
+    <span class="request is-delete">/DELETE</span>
+    <span>/api/todos/{id}</span>
+    <p class="section-title">Description</p>
+    <p class="section-content">Delete an existing todo by ID.</p>
+    <p class="section-title">Content Type</p>
+    <p class="section-content">application/json</p>
+    <p class="section-title">Request Body</p>
+    <p class="section-content">none</p>
+    <p class="section-title">Sample Response</p>
+    <pre class="section-content">{
+  "message": "todo deleted"
+}
+</pre>
+  </div>
+</div>
 </body>
 </html>
